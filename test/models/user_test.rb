@@ -5,7 +5,12 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
 
   def setup
-    @user = User.new(name: "Example User", email: "user@example.com")
+    #this sets up all tests with the appropriate inputs to be able to run
+    #effective tests, it generates the instance var further tests use
+    @user = User.new(name: "Example User", email: "user@example.com",
+                    password: "foobaruser", password_confirmation: "foobaruser")
+    # added the password: and password_confirmation: guidelines in order to pass
+    # imposed strictures implaced by our use of has_secure_password in user.rb
   end
 
   test "should be valid" do
@@ -67,6 +72,16 @@ class UserTest < ActiveSupport::TestCase
     @user.email = mixed_case_email
     @user.save
     assert_equal mixed_case_email.downcase, @user.reload.email
+  end
+
+  test "password should be present (nonblank)" do
+    @user.password = @user.password_confirmation = "" * 10
+    assert_not @user.valid?
+  end
+
+  test "password should have a minimum length" do
+    @user.password = @user.password_confirmation = "a" * 9
+    assert_not @user.valid?
   end
 
 end
