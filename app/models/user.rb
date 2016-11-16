@@ -9,6 +9,7 @@ class User < ApplicationRecord
   #assigning our "okayed" regex params as a constant allows us to cleanly call
 
   has_secure_password
+  # http://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html
   # most secure password machinery can be implemented with this single inbuilt
   # rails method, it include the following functionality:
 
