@@ -1,3 +1,7 @@
-<%= @user.name %>, <%= @user.email %>
-  <!--basic temporary html.erb we use to placehold and check whether we are displaying
-  the controller action correctly -->
+<% provide(:title, @user.name) %>
+<h1>
+  <!-- creates a user icon and displays a name with it inside a heading ,
+  refer to gravatar docs for more info-->
+  <%= gravatar_for @user %>
+  <%= @user.name %>
+</h1>
