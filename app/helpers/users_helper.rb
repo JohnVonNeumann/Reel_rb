@@ -3,14 +3,14 @@ module UsersHelper
   #we are creating a file that helps the user view pull
 
   # Returns the Gravatar for the given user.
-  def gravatar_for(user)
+  def gravatar_for(user, size: 80 )
 
     gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
     # In Ruby, the MD5 hashing algorithm is implemented using the
     # hexdigest method, which is part of the Digest library:
     # We are required to downcase the email as it will ensure our
     # md5 hash result is downcase
-    gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}"
+    gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
     image_tag(gravatar_url, alt: user.name, class: "gravatar")
 
     # MD5 Example
