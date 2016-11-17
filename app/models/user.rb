@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+
   before_save { email.downcase! }
   validates :name, presence: true, length: {maximum: 50}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
@@ -9,6 +10,7 @@ class User < ApplicationRecord
   #assigning our "okayed" regex params as a constant allows us to cleanly call
 
   has_secure_password
+  # http://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html
   # most secure password machinery can be implemented with this single inbuilt
   # rails method, it include the following functionality:
 
