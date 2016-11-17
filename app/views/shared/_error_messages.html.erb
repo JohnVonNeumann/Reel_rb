@@ -1,0 +1,21 @@
+<!-- we created this file manually as we call on the shared/error_messages
+    inside our new.html.erb when setting form control (error throwing to the
+    user should they leave an input box empty on sign up)-->
+
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      The form contains <%= pluralize(@user.errors.count, "error") %>.
+      <!-- displays error messages by the amount of failed form entries req's-->
+    </div>
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<!-- This partial introduces several new Rails and Ruby constructs,
+ including two methods for Rails error objects. The first method is count,
+ which simply returns the number of errors: -->
