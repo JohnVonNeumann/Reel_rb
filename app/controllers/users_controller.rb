@@ -11,6 +11,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      log_in @user
+      #logs in a user upon signup
       flash[:success] = "Welcome to Reel! Your Number One Fishing Destination Finder!"
       redirect_to @user
       # note that we've written redirect_to @user where we could have used

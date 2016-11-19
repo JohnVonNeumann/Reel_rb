@@ -26,4 +26,10 @@ class User < ApplicationRecord
   # by which the app must operate, whilst in the test file, create instances
   # to gain a specific outcome
 
+  def User.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                                  BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
+  end                                              
+
 end
