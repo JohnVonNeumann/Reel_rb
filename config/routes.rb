@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   delete '/login', to: 'sessions#destroy'
   # Unlike the Users resource, which used the special resources method to
   # obtain a full suite of RESTful routes automatically (Listing 7.3),
-  # the Sessions resource will use only named routes, handling GET and POST 
+  # the Sessions resource will use only named routes, handling GET and POST
   # requests with the login route and DELETE request with the logout route.
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
