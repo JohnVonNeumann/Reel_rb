@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post '/signup', to: 'users#create'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
-  delete '/login', to: 'sessions#destroy'
+  delete '/logout', to: 'sessions#destroy'
   # Unlike the Users resource, which used the special resources method to
   # obtain a full suite of RESTful routes automatically (Listing 7.3),
   # the Sessions resource will use only named routes, handling GET and POST
