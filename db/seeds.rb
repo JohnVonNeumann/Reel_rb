@@ -9,13 +9,13 @@
 
 User.create!(name: "Example User",
              email: "example@reelapp.org",
-             password: "foobar",
-             password_confirmation: "foobar")
+             password: "foobaruser",
+             password_confirmation: "foobaruser")
 
 99.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@reelapp.org"
-  password = "password12"
+  password = "password123"
   User.create!(name:  name,
                email: email,
                password:              password,
