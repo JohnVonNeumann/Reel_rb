@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = User.all
+    @users = User.paginate(page: params[:page])
   end
 
   # GET /users/1
@@ -71,7 +71,6 @@ class UsersController < ApplicationController
     #confirms a user is logged in, disables certain actions should they not
     def logged_in_user
       unless logged_in?
-        store_location
         flash[:danger] = "Please log in."
         redirect_to login_url
       end
