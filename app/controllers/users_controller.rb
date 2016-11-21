@@ -1,12 +1,13 @@
 class UsersController < ApplicationController
   # forces certain actions to perform a private method before contiuing on
   # their own functional path
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_user, only: [:edit, :update]
+  before_action :set_user,       only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:index, :edit, :update]
   before_action :correct_user,   only: [:edit, :update]
 
   # GET /users
   def index
+    @users = User.all
   end
 
   # GET /users/1
