@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
+  # forces certain actions to perform a private method before contiuing on
+  # their own functional path
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:edit, :update]
 
   # GET /users
   def index
@@ -61,6 +64,14 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    end
+
+    #confirms a user is logged in, disables certain actions should they not
+    def logged_in_user
+      unless logged_in?
+        flash[:danger] = "Please log in."
+        redirect_to login_url
+      end
     end
 
 end
