@@ -18,19 +18,20 @@ class UsersController < ApplicationController
       # note that we've written redirect_to @user where we could have used
       # redirect_to user_url(@user), this is because rails automaticaly
       # infers from redirect_to @user that we want to redirect to user_url(@user)
-      #handle a succesful save
+      # handle a succesful save
     else
       render 'new'
     end
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+    
   private
 
     def user_params
-      params.require(:user).permit(:name,
-                                   :email, 
-                                   :password,
-                                   :password_confirmation)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 
 end
