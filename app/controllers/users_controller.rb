@@ -1,13 +1,20 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-  def show
-    @user = User.find(params[:id])
+  # GET /users
+  def index
   end
 
+  # GET /users/1
+  def show
+  end
+
+  # GET /users/new
   def new
     @user = User.new
   end
 
+  # PATCH/PUT /users/1
   def create
     @user = User.new(user_params)
     if @user.save
@@ -24,11 +31,31 @@ class UsersController < ApplicationController
     end
   end
 
+  # GET /products/1/edit
   def edit
-    @user = User.find(params[:id])
   end
-    
+
+  # PATCH/PUT /products/1
+  def update
+    if @user.update_attributes(user_params)
+      # handle a succesful update
+    else
+      render 'edit'
+    end
+  end
+
+  # DELETE /products/1
+  def destroy
+  end
+
   private
+
+    # incorporated this private method after seeing it's obvious beneficial usage
+    # in Agile Web Dev for Rails 5, applies to all methods as a setup style method
+    # to simplify the process and enforce DRY
+    def set_user
+      @user = User.find(params[:id])
+    end
 
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
