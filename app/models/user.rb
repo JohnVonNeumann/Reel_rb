@@ -20,7 +20,7 @@ class User < ApplicationRecord
   #       requiring that they match
   # An authenticate method that returns the user when the password is
   #       correct (and false otherwise)
-  validates :password, presence: true, length: { minimum: 10 }
+  validates :password, presence: true, length: { minimum: 10 }, allow_nil: true
   # here we insert a valiation attempt for passwords which will then be cross
   # checked against our user_test.rb password tests, here we dictate the rules
   # by which the app must operate, whilst in the test file, create instances
