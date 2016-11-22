@@ -51,4 +51,19 @@ ActiveRecord::Schema.define(version: 20161122030041) do
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.text     "body"
+    t.integer  "sender_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "body_html"
+  end
+
+  create_table "recipients", force: :cascade do |t|
+    t.integer  "message_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end
