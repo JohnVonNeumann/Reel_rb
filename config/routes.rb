@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  ActiveAdmin.routes(self)
   resources :listings
   get 'sessions/new'
   root 'static_pages#home'
