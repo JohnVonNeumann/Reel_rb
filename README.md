@@ -50,3 +50,16 @@ Well then, yesterday I made a commit that I quote:
 After 4 more hours of fucking about, turns out that even as I was committing, I knew that errors were swiftly converging on my position. Total fuck around. The reason I made the comment in this first place was in order to get some functionality working for friendly forwarding shit, I would have to piecemeal a load of bits and pieces in from other places (specifically, chapter 9, a chapter I skipped to save time), I knew at the time that this was a shit idea, but proceeded, if anything, I’m happy my spidersense’s are working, next time I’ll just go with the gut feeling.
 
 After two days of plodding, I finally finished the updating users section and can move onto other things, I’m going to leave the last chapters now and move onto coding more of my own solution, I have the backbone, time to add in muscle and skin. My idea is to move onto a listings/products model/controller now, as to enable people to post and view their relevant listings of products and the like, alongisde this I’ll build a simple cart style system, I don’t believe that the actual system would use such an archaic system as a “shopping cart”, it seems a bit too dated and e-commerce, but for all intents and purposes, simple is how we are doing this one. I’ll be working through some examples in my rails book that I recently book, Agile Web Dev with Rails 5.
+
+Listing Important Bits and Pieces:
+title:string
+description:text
+image_url:string
+price:decimal
+location:string
+
+Got my Admin Viewpage up and running using ActiveAdmin gem, took a bit of fucking about but got there eventually, had my first experience with initializer files and the like, looks good, a little too good. 
+
+Gems. I feel that I’m becoming more and more annoyed by this implementation of gem bullshit, I’m not actually coding, I’m just working out why a gem isn’t working, finding a place that the puzzle piece fits then forcefully cramming it into a gap with a sledgehammer. I appreciate that gems are useful and that they allow us to utilise code that is far better than our own, what I don’t enjoy however is having a hand forced on matters, for example, I can’t find a messaging gem that does not rely on devise. I read a blog post:  http://www.mikeperham.com/2016/02/09/kill-your-dependencies/ that talked about gems that use gems that use gems and it confirmed a thought that I’d been ruminating on, and that was in relation to the introduction of other peoples errors when you use a gem, especially gems that clamber on top of one another. Perhaps I’m writing from a point of no perspective, but atm I feel that as a student, gem use is damaging and even a harmful habit to get into. Once you know what you’re doing, sweet, go for your life, but atm installing gems that install gems feels stupid.
+
+I’ve decided to leave the messaging app until the very end seeing as it isn’t a core piece of functionality in terms of it is required for the site to work, it is a criteria point but not integral, moving into cart creation/payment processing and the confirmation emails.
