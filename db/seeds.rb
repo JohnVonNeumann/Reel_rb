@@ -21,3 +21,31 @@ User.create!(name:  "Example User",
                password:              password,
                password_confirmation: password)
 end
+
+Listing.create(title:       'Bargain Fishing in Barramundi Capital of the World!',
+               description: 'Come fish with PFC, the number one fishing trip
+                             provider in Queensland! With our dedicated staff
+                             and professional guides we will ensure you have the
+                             perfect trip!',
+               image_url:    'weipafishing1.jpeg',
+               price:        500.00,
+               location:     'Weipa, Queensland, Australia')
+
+Listing.create(title:       'Local Fisherman with Gar Experience and Free Time',
+              description:  'Been fishing the local waters for over 3 decades now
+                             and know the inlets and rivers like the back of my hand,
+                             charge reasonable rates for a great fishing experience.
+                             All food and drink provided.',
+              image_url:    'garfishing1.jpeg',
+              price:         100.00,
+              location:      'Tooradin, Victoria, Australia')
+
+Listing.create(title:       'Professional Sports Fisherman providing Coaching.',
+               description: 'My name is Rick Harris, and this is my fishing school.
+                             I have been a gold medal winning fisherman on pro
+                             circuits for over 15 years now, my track record speaks
+                             for itself, looking for students of all skill levels.
+                             Serious inquiries only thank you.',
+               image_url:    'professionalfishing.jpeg',
+               price:        300.00,
+               location:     'Australia Wide')
