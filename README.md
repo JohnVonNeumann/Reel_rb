@@ -1,38 +1,34 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to my ReadMe. My name is Louis and I am a student at CoderFactoryAcademy Melbourne.
 
-Things you may want to cover:
+This is my term 2 assignment, in this assignment we were to build a two sided marketplace app with a selection of criteria including:
 
-* Ruby version
-Rails v5
+Demonstrate Ruby on Rails development skills.
+Create your application using Ruby on Rails.
+Demonstrate knowledge of Rails conventions.
+Use postgresql database in development.
+Use an API (eg. Omniauth, Geocoding, Maps, other..).
+Use appropriate gems.
+Use environmental variables to protect API keys etc.
+Implement a payment system for your product.
+Your app must send transactional emails (eg. using Mailgun).
+Your app should have an internal user messaging system.
+Your app will have some type of searching, sorting and or filtering capability.
+Your app will have some type of file uploading capability (eg. images).
+Your app will have authentication (eg. Devise, must have full functionality in place).
+Your app will have authorisation (users have restrictions on what they can see and edit).
+Your app will have an admin dashboard for the admin user to administrate the site.
+Document your application with a README that explains how to setup, configure and use your application.
 
-* System dependencies
+My app, Reel, is an app to match fisherman to fishing guides of all levels of skill and professionalism, it is for small scale local fishermen and hobbyists, to commerical fishermen and professional sportsmen. The idea was to be able to facilitate better usage of skill throughout the fishing community.
 
-
-* Configuration
-
-
-* Database creation
-
-
-* Database initialization
-
-
-* How to run the test suite
-Rails Test
-
-* Services (job queues, cache servers, search engines, etc.)
-
-
-* Deployment instructions
-
-* ...
+I'll provide a small, brief overview of the mountain of text that comes below this:
+I attempted to roll a large part of this system myself and learnt a lot along the way, but ultimately failed in the overall goal of completing the assignment. I'm proud of my attempt but sad that I didn't manage to finish. The project has allowed me a glimpse into the intricate process of developing web applications and the amount of work that goes into it all. I plan over the next week to finish the application using gems, this will probably occur in a different file, as I'm not sure how I would go about melding new to old. Otherwise, I would probably have already done it. 
 
 Things I've learnt whilst going through this project:
 
-* Wednesday 16th November 2016
+<b> Wednesday 16th November 2016 </b>
 Today I completed chapter 6 of Hartl's book and added this through (slightly adjusting along the way for personal project reasons) and after struggling with the entire concept of the MVC and layout of apps, it's all starting to come together. Changes to the model and controller create no aesthetic changes that are viewable outside of the source code (obviously lol), what strikes me about this is the way a back end could effectively be completely built, refactored and engineered, yet the face of the site would not show any improvement at all (at least in the case of the model, controller would add more pages). Throughout the chapter I was struck by how useful even very basic implementations of gems (bcrypt in this example) could be, with the use of has_secure_password inside my user.rb model (below my other validation criteria) I was able to call up a massive variety of methods and other useful bits and pieces.
 
 * Sunday 20th November 2016
@@ -58,8 +54,12 @@ image_url:string
 price:decimal
 location:string
 
-Got my Admin Viewpage up and running using ActiveAdmin gem, took a bit of fucking about but got there eventually, had my first experience with initializer files and the like, looks good, a little too good. 
+Got my Admin Viewpage up and running using ActiveAdmin gem, took a bit of fucking about but got there eventually, had my first experience with initializer files and the like, looks good, a little too good.
 
 Gems. I feel that I’m becoming more and more annoyed by this implementation of gem bullshit, I’m not actually coding, I’m just working out why a gem isn’t working, finding a place that the puzzle piece fits then forcefully cramming it into a gap with a sledgehammer. I appreciate that gems are useful and that they allow us to utilise code that is far better than our own, what I don’t enjoy however is having a hand forced on matters, for example, I can’t find a messaging gem that does not rely on devise. I read a blog post:  http://www.mikeperham.com/2016/02/09/kill-your-dependencies/ that talked about gems that use gems that use gems and it confirmed a thought that I’d been ruminating on, and that was in relation to the introduction of other peoples errors when you use a gem, especially gems that clamber on top of one another. Perhaps I’m writing from a point of no perspective, but atm I feel that as a student, gem use is damaging and even a harmful habit to get into. Once you know what you’re doing, sweet, go for your life, but atm installing gems that install gems feels stupid.
 
 I’ve decided to leave the messaging app until the very end seeing as it isn’t a core piece of functionality in terms of it is required for the site to work, it is a criteria point but not integral, moving into cart creation/payment processing and the confirmation emails.
+
+It is the day before my show and tell and I am sad to say I have not fully built out the product in time, attempting to roll my own system was a risky play from the start and I knew that it would be extremely difficult. However, I'd say that it has served its intended purpose of educating me more on rails and the intricacies of the whole cycle. My experience has been enjoyable and I've realised what a monolithic task it would be to write everything yourself. In a way it has kinda strengthened my perspective however, it seems that some areas of development have been ushered into a cartel style market, where you are restricted from entire swathes of gems and imported functionality should you not tow the line and use specific elements of code, ie: devise, this is in reality, probably a good thing however, as it would most likely provide a really solid base of security for the industry. I actually talked with a senior dev about this and he said that it was good to know how to roll your own auth system but in deployment it was a risky move.
+
+My plan for this codebase is probably to leave the majority of it behind and over the next week, rewrite it all using gems and imported functionality in order to create a working product that is worthy of attention, I'll keep the repo as good experience and an example. s
