@@ -3,6 +3,13 @@ require 'test_helper'
 class ListingsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @listing = listings(:one)
+    @update = {
+      title: 'Lorem Ipsum',
+      description: 'Wibbles are fun!',
+      image_url: 'lorem.jpg',
+      price: 19.95,
+      location: 'London'
+    }
   end
 
   test "should get index" do
@@ -17,9 +24,8 @@ class ListingsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create listing" do
     assert_difference('Listing.count') do
-      post listings_url, params: { listing: { description: @listing.description, image_url: @listing.image_url, location: @listing.location, price: @listing.price, title: @listing.title } }
+      post listings_url, params: { listing: @update}
     end
-
     assert_redirected_to listing_url(Listing.last)
   end
 
@@ -34,7 +40,7 @@ class ListingsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update listing" do
-    patch listing_url(@listing), params: { listing: { description: @listing.description, image_url: @listing.image_url, location: @listing.location, price: @listing.price, title: @listing.title } }
+    patch listing_url(@listing), params: { listing: @update }
     assert_redirected_to listing_url(@listing)
   end
 
