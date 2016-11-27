@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'store/index'
+
   ActiveAdmin.routes(self)
   resources :listings
   get 'sessions/new'
