@@ -1,2 +1,14 @@
-<h1>Store#index</h1>
-<p>Find me in app/views/store/index.html.erb</p>
+<p id="notice"><%=  notice %></p>
+
+<h1> Your Trip Catalog </h1>
+
+<% @listings.each do |listing| %>
+  <div class="entry col-md-4">
+    <%= image_tag(listing.image_url) %>
+    <h3><%= listing.title %></h3>
+    <%= sanitize(listing.description) %>
+    <div class="price_line">
+      <span class="price"><%= listing.price %></span>
+    </div>
+  </div>
+<% end %>
