@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class ListingTest < ActiveSupport::TestCase
+  fixtures :listings
+
   test "listing attributes must not be empty" do
     listing = Listing.new
     assert listing.invalid?
@@ -51,5 +53,15 @@ class ListingTest < ActiveSupport::TestCase
       assert new_listing(name).invalid?, "#{name} shouldn't be valid"
     end
   end
-  
+
+  test "listing is not valid without a unique title" do
+    listing  = Listing.new(title: listings(:fishing).title,
+                           description: "gggggg",
+                           price: 1,
+                           image_url: "ggg.jpg",
+                           location: "ggg")
+    assert listing.invalid?
+    assert_equal ["has already been taken"], listing.errors[:title]
+  end
+
 end

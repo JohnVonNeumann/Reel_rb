@@ -13,3 +13,12 @@ two:
   image_url: MyString
   price: 9.99
   location: MyString
+
+fishing:
+  title: Great Fishing Destination in Queensland
+  description:
+    Fishing in queensland is the greatest thrill of a life time, youll be
+    able to fish all day long.
+  price: 450
+  image_url: fishing.png
+  location: Queensland
