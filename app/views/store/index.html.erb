@@ -2,13 +2,17 @@
 
 <h1> Your Trip Catalog </h1>
 
-<% @listings.each do |listing| %>
-  <div class="entry col-md-4">
-    <%= image_tag(listing.image_url) %>
-    <h3><%= listing.title %></h3>
-    <%= sanitize(listing.description) %>
-    <div class="price_line">
-      <span class="price"><%= listing.price %></span>
-    </div>
-  </div>
+<% cache @listings do %>
+  <% @listings.each do |listing| %>
+    <% cache listing do %>
+      <div class="entry col-md-4">
+        <%= image_tag(listing.image_url) %>
+        <h3><%= listing.title %></h3>
+        <%= sanitize(listing.description) %>
+        <div class="price_line">
+          <span class="price"><%= number_to_currency(listing.price) %></span>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
 <% end %>

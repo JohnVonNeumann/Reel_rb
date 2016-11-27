@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   resources :listings
   get 'sessions/new'
-  #root 'static_pages#home'
   root 'store#index'
   get '/help', to: 'static_pages#help'
   get '/contact', to: 'static_pages#contact'
